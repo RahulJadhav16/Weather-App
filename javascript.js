@@ -41,31 +41,31 @@ fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+city, opti
 		tmp.innerHTML="🥶"
 	}
 
-	else if(tm>0 && tm<5)
+	else if(tm>=0 && tm<=5)
 	{
 		tmp.innerHTML="🥶 Ice melts and water freezes"
 	}
-	else if(tm>5 && tm<10)
+	else if(tm>=6 && tm<=10)
 	{
 		tmp.innerHTML="❄️ A typical day in winter"
 	}
-	else if(tm>10 && tm<15)
+	else if(tm>=11 && tm<=15)
 	{
 		tmp.innerHTML="♨️ A warm winter day or a cool summer day"
 	}
-	else if(tm>15 && tm<20)
+	else if(tm>=16 && tm<=20)
 	{
 		tmp.innerHTML="🌞 A nice warm day"
 	}
-	else if(tm>20 && tm<25)
+	else if(tm>=21 && tm<=25)
 	{
 		tmp.innerHTML="☀️ A hot summer’s day"
 	}
-	else if(tm>25 && tm<30)
+	else if(tm>=26 && tm<=30)
 	{
 		tmp.innerHTML="🥵 A very hot summer’s day"
 	}
-	else if(tm>30 && tm<35)
+	else if(tm>=31 && tm<=35)
 	{
 		tmp.innerHTML="🔥 A very hot summer’s day"
 	}
