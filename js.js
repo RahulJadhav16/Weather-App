@@ -46,7 +46,7 @@ fetch('https://air-quality-by-api-ninjas.p.rapidapi.com/v1/airquality?city='+cit
             state.innerHTML="😣 Very Unhealthy";
             des.innerHTML="Health alert: The risk of health effects is increased for everyone."
         }
-        else if(a>300 && a<500)
+        else if(a>300)
         {
             state.innerHTML="😖 Hazardous";
             des.innerHTML="Health warning of emergency conditions: everyone is more likely to be affected."
