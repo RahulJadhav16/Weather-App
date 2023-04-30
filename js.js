@@ -1,3 +1,7 @@
+
+const loader2 = document.getElementById('loader2');
+loader2.style.display = 'none';
+
 const options1 = {
 	method: 'GET',
 	headers: {
@@ -8,9 +12,12 @@ const options1 = {
 
 const aqi=(city)=>
 {
+    
+    loader2.style.display = 'block';
 fetch('https://air-quality-by-api-ninjas.p.rapidapi.com/v1/airquality?city='+city, options1)
 	.then(response => response.json())
 	.then(response =>{
+        loader2.style.display = 'none';
         overall_aqi.innerHTML=response.overall_aqi
         CO.innerHTML=response.CO.concentration
         NO2.innerHTML=response.NO2.concentration
