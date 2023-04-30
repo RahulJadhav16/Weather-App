@@ -1,9 +1,9 @@
 
 
 
-
-
-
+const loader = document.getElementById('loader');
+loader.style.display = 'none';
+const message = document.getElementById('message');
 
 const options = {
 	method: 'GET',
@@ -18,10 +18,21 @@ const getWeather=(city)=>{
 	cityName.innerHTML=city
 	cityName2.innerHTML=city
 
+loader.style.display = 'block';
 fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+city, options)
 .then(response => response.json())
     
 	.then(response =>{
+		if (response.length === 0) {
+            message.innerHTML = "Sorry we are having temporary server issues";
+            message.style.color = 'red';
+            tableBody.innerHTML = '';
+        }
+		else
+		{
+
+
+		loader.style.display = 'none';
 	console.log(response)
 	cloud_pct.innerHTML=response.cloud_pct
 	feels_like.innerHTML=response.feels_like
@@ -72,7 +83,7 @@ fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+city, opti
 	
 	
 	
-	
+}
 	
 	
 	
