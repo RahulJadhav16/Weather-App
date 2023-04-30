@@ -59,6 +59,17 @@
         <input  id="city" class="form-control me-2" type="search" placeholder="Search City" aria-label="Search">
         <button class=" btn btn-light btn-outline-success" type="submit" id="submit">Search</button>
       </form>
+      
+       <!-- spinner  -->
+       <div class="d-flex justify-content-center my-4">
+        <div id="loader" class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+
+        <div id="message"></div>
+
+
         <h1 class="text-center text-white my-2 ">Weather for <span id="cityName"></span></h1>
         <h3 class="text-center text-white"><span id="tmp"></span></h3>
         <div class="row row-cols-1 row-cols-md-3 mb-3 text-center my-5">
@@ -120,12 +131,23 @@
               </div>
             </div>
           </div>
+          
+
+
 
           <div class="col text-center">
             <div class="card mb-4 rounded-3 shadow-sm">
               <div class="card-header py-3 text-white bg-primary border-primary">
                 <h4 class="my-0 fw-normal">Air Quality Index of <span id="cityName2"></span> </h4>
               </div>
+              <!-- spinner  -->
+       <div class="d-flex justify-content-center my-4">
+        <div id="loader2">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+              
+              
               <div class="card-body">
                 <h2>Overall AQI is <span id="overall_aqi"></span> <span id="state"></span></h2>
                 <ul class="list-unstyled mt-3 mb-4">
