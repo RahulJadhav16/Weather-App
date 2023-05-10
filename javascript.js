@@ -4,7 +4,7 @@
 const loader = document.getElementById('loader');
 loader.style.display = 'none';
 const message = document.getElementById('message');
-
+searchInput = document.getElementById("city");
 const options = {
 	method: 'GET',
 	headers: {
@@ -100,14 +100,23 @@ fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+city, opti
     
 	
 }
-submit.addEventListener("click", (e) => {
-	e.preventDefault()
+//Old search box 
+// submit.addEventListener("click", (e) => {
+// 	e.preventDefault()
 
-	getWeather(city.value);
+// 	getWeather(city.value);
 	
 	
-}
-)
+// }
+// )
+
+searchInput.addEventListener("keydown", function(event) {
+	if (event.keyCode === 13) {
+	  event.preventDefault(); // Prevents the default action of submitting the form
+	  document.querySelector(".search-btn").click(); // Triggers the click event of the search button
+	  getWeather(city.value);
+	}
+  });
 mu.addEventListener("click",()=>{ getWeather("Mumbai")})
 pu.addEventListener("click",()=>{ getWeather("Pune")})
 ba.addEventListener("click",()=>{ getWeather("Bangalore")})
