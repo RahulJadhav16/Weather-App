@@ -1,6 +1,7 @@
 
 const loader2 = document.getElementById('loader2');
 loader2.style.display = 'none';
+const searchInput = document.getElementById("city");
 
 const options1 = {
 	method: 'GET',
@@ -64,14 +65,24 @@ fetch('https://air-quality-by-api-ninjas.p.rapidapi.com/v1/airquality?city='+cit
 	.catch(err => console.error(err));
 }
 
-submit.addEventListener("click", (e) => {
-	e.preventDefault()
+//Old event lisner
+// submit.addEventListener("click", (e) => {
+// 	e.preventDefault()
 
-	aqi(city.value);
+// 	aqi(city.value);
 	
 	
-}
-)
+// }
+// )
+
+searchInput.addEventListener("keydown", function(event) {
+	if (event.keyCode === 13) {
+	  event.preventDefault(); // Prevents the default action of submitting the form
+	  document.querySelector(".search-btn").click(); // Triggers the click event of the search button
+	  aqi(city.value);
+	}
+  });
+
 mu.addEventListener("click",()=>{ aqi("Mumbai")})
 pu.addEventListener("click",()=>{ aqi("Pune")})
 ba.addEventListener("click",()=>{ aqi("Bangalore")})
