@@ -8,7 +8,9 @@ const message = document.getElementById('message');
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '1fb252a164mshfc91a499b4fda0ap14f54fjsn849a5c16819b',
+// 		'X-RapidAPI-Key': '1fb252a164mshfc91a499b4fda0ap14f54fjsn849a5c16819b',
+// 		'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
+		'X-RapidAPI-Key': '48ecbeda62msh98c7b8ef9df46f2p16ce99jsne48a01e3531a',
 		'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
 	}
 };
