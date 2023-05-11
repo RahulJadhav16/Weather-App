@@ -79,7 +79,11 @@ searchInput.addEventListener("keydown", function(event) {
 	if (event.keyCode === 13) {
 	  event.preventDefault(); // Prevents the default action of submitting the form
 	  document.querySelector(".search-btn").click(); // Triggers the click event of the search button
-	  aqi(city.value);
+      if(checkInput())
+      {
+        aqi(city.value);
+      }
+	  
 	}
   });
 
