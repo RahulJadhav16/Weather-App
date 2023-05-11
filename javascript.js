@@ -3,8 +3,25 @@
 
 const loader = document.getElementById('loader');
 loader.style.display = 'none';
+const warning=document.getElementById('warning');
+warning.style.display='none';
 const message = document.getElementById('message');
 searchInput = document.getElementById("city");
+
+//Adding function that show null i/p warning
+function checkInput() {
+    var input = document.getElementById("city").value;
+    if (input == "") {
+	  warning.style.display='block';
+	  setTimeout(()=>{
+		warning.style.display='none';
+
+	  },3000)
+      return false;
+    }
+    return true;
+  }
+
 const options = {
 	method: 'GET',
 	headers: {
@@ -114,7 +131,10 @@ searchInput.addEventListener("keydown", function(event) {
 	if (event.keyCode === 13) {
 	  event.preventDefault(); // Prevents the default action of submitting the form
 	  document.querySelector(".search-btn").click(); // Triggers the click event of the search button
+	  if(checkInput())
+	  {
 	  getWeather(city.value);
+	  }
 	}
   });
 mu.addEventListener("click",()=>{ getWeather("Mumbai")})
