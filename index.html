@@ -16,7 +16,7 @@
     
       <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#"> <h3>🌤 Weather App</h3></a>
+          <a class="navbar-brand" href="index.html"> <h3>🌤 Weather App</h3></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -48,13 +48,28 @@
     <div class="bg bg2"></div>
     <div class="bg bg3"></div>
     
+    <!-- Adding Warning msg  for Api Down-->
+    <div class="alert alert-warning alert-dismissible" role="alert" id="warningApiDown">
+      <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>We apologize for the inconvenience caused. Unfortunately, we are experiencing issues with our API at the moment, which may be impacting your user experience. Our team is working diligently to resolve the issue as quickly as possible.
+      </strong>
+    </div>
       
     
-  <!-- Adding Warning msg  -->
+  <!-- Adding Warning msg  for null input -->
         <div class="alert alert-danger my-2" role="alert" id="warning">
           Please enter valid city name!
 
         </div>
+
+        <!-- Adding Warning msg  for Wrong City name -->
+        <div class="alert alert-danger my-2" role="alert" id="warningWrongCity">
+          Please enter valid city name!
+
+        </div>
+
+        
+        
 
     
     <div class="my-5 container">

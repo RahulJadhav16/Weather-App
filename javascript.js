@@ -18,10 +18,37 @@ weatherRain.style.display='none';
 
 const loader = document.getElementById('loader');
 loader.style.display = 'none';
+
+//Null ip warning
 const warning=document.getElementById('warning');
 warning.style.display='none';
+
+//APi down warning
+const warningApiDown=document.getElementById("warningApiDown");
+warningApiDown.style.display='none';
+
+//Wrong city name Warning
+const warningWrongCity=document.getElementById("warningWrongCity");
+warningWrongCity.style.display='none';
+
+
 const message = document.getElementById('message');
 searchInput = document.getElementById("city");
+
+
+
+//Adding Wrong ciry name Warning
+function checkCityName() {
+    
+	  setTimeout(()=>{
+		warningWrongCity.style.display='none';
+
+	  },3000)
+     
+    }
+    
+  
+
 
 //Adding function that show null i/p warning
 function checkInput() {
@@ -62,11 +89,18 @@ fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+city, opti
 .then(response => response.json())
     
 	.then(response =>{
-		if (response.length === 0) {
-            message.innerHTML = "Sorry we are having temporary server issues";
-            message.style.color = 'red';
-            tableBody.innerHTML = '';
+		if (response.messages == "The API is unreachable, please contact the API provider") {
+           
+			warningApiDown.style.display='block';
         }
+
+		if(response.error=="An unexpected error occured.")
+		{
+			warningWrongCity.style.display='block';
+			checkCityName();
+			
+		}
+
 		else
 		{
 
