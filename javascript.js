@@ -1,3 +1,18 @@
+// Weather icons
+
+const sun=document.getElementById("sun");
+const weatherCloud=document.getElementById("weather-cloud");
+const weatherSnow=document.getElementById("weather-snow");
+const weatherCcloudAndSun=document.getElementById("weather-cloudAndSun");
+const weatherRain=document.getElementById("weather-rain");
+
+//MAking weather icons none 
+sun.style.display='none';
+weatherCloud.style.display='none';
+weatherSnow.style.display='none';
+weatherCcloudAndSun.style.display='none';
+weatherRain.style.display='none';
+
 
 
 
@@ -33,6 +48,11 @@ const options = {
 };
 
 const getWeather=(city)=>{
+	sun.style.display='none';
+    weatherCloud.style.display='none';
+    weatherSnow.style.display='none';
+    weatherCcloudAndSun.style.display='none';
+    weatherRain.style.display='none';
 
 	cityName.innerHTML=city
 	cityName2.innerHTML=city
@@ -68,36 +88,37 @@ fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+city, opti
 	let tm=response.temp
 	if(tm<0)
 	{
-		tmp.innerHTML="🥶"
+		weatherSnow.style.display='block';
 	}
 
 	else if(tm>=0 && tm<=5)
 	{
-		tmp.innerHTML="🥶 Ice melts and water freezes"
+		weatherSnow.style.display='block';
 	}
 	else if(tm>=6 && tm<=10)
 	{
-		tmp.innerHTML="❄️ A typical day in winter"
+		weatherSnow.style.display='block';
 	}
 	else if(tm>=11 && tm<=15)
 	{
-		tmp.innerHTML="♨️ A warm winter day or a cool summer day"
+		
+		weatherCloud.style.display='block';
 	}
 	else if(tm>=16 && tm<=20)
 	{
-		tmp.innerHTML="🌞 A nice warm day"
+		weatherCloud.style.display='block';
 	}
 	else if(tm>=21 && tm<=25)
 	{
-		tmp.innerHTML="☀️ A hot summer’s day"
+		sun.style.display='block';
 	}
 	else if(tm>=26 && tm<=30)
 	{
-		tmp.innerHTML="🥵 A very hot summer’s day"
+		sun.style.display='block';
 	}
-	else if(tm>=31 && tm<=35)
+	else if(tm>=31)
 	{
-		tmp.innerHTML="🔥 A very hot summer’s day"
+		sun.style.display='block';
 	}
 	
 	

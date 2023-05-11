@@ -87,8 +87,52 @@
         <div id="message"></div>
 
 
-        <h1 class="text-center text-white my-2 ">Weather for <span id="cityName"></span></h1>
-        <h3 class="text-center text-white"><span id="tmp"></span></h3>
+        <h1 class="text-center text-white my-1 ">Weather for <span id="cityName"></span></h1>
+        
+        <!-- Animated Weather Divs -->
+        <div class="d-flex justify-content-center" style="margin-right: 100px;">
+          <div class="weather-sun" id="sun">
+         <div class="sun">
+           <div class="rays"></div>
+           <div class="rays"></div>
+           <div class="rays"></div>
+           <div class="rays"></div>
+         </div>
+       </div>
+
+       <div class="weather-cloud" id="weather-cloud" style="margin-right: 60px;">
+				<div class="cloud"></div>
+				<div class="cloud"></div>
+			</div>
+
+      <div class="weather-snow" id="weather-snow">
+				<div class="snow">
+					<div class="f"></div>
+				</div>
+			</div>
+
+
+      <div class="weather-cloudAndSun" id="weather-cloudAndSun">
+				<div class="cloud"></div>
+				<div class="sun">
+					<div class="rays"></div>
+					<div class="rays"></div>
+					<div class="rays"></div>
+					<div class="rays"></div>
+				</div>
+			</div>
+
+      <div class="weather-rain" id="weather-rain" style="margin-right:100px; margin-bottom: 25px;">
+				<div class="cloud"></div>
+				<div class="rain"></div>
+				<div class="rain"></div>
+				<div class="rain"></div>
+				<div class="rain"></div>
+			</div>
+
+       </div>
+       
+        
         <div class="row row-cols-1 row-cols-md-3 mb-3 text-center my-5">
             <div class="col">
               <div class="card mb-4 rounded-3 shadow-sm">
