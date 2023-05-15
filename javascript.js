@@ -98,6 +98,8 @@ fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+city, opti
 		{
 			warningWrongCity.style.display='block';
 			checkCityName();
+			getWeather("Delhi");
+			return;
 			
 		}
 
