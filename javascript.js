@@ -36,6 +36,14 @@ const message = document.getElementById('message');
 searchInput = document.getElementById("city");
 
 
+const apiKey = {
+	method: 'GET',
+	headers: {
+		'api-key': 'bdc_7918d4c959ae4428a91390d65ba90ddb'
+	}
+};
+
+
 
 //Adding Wrong ciry name Warning
 function checkCityName() {
@@ -199,7 +207,49 @@ pu.addEventListener("click",()=>{ getWeather("Pune")})
 ba.addEventListener("click",()=>{ getWeather("Bangalore")})
 home.addEventListener("click",()=>{ getWeather("Delhi")})
 
-getWeather("Delhi");
+
+//Find the city name from lattitude and langitude
+
+async function getTheNameOftheUsingLattitudeAndLangitude(latitude,longitude)
+{
+	fetch('https://api.bigdatacloud.net/data/reverse-geocode-client?latitude='+latitude+'&longitude='+longitude+'&localityLanguage=en', apiKey)
+	.then(response => response.json())
+	.then(response=>{
+		console.log(response.locality)
+		getWeather(response.locality);
+
+	})
+	.catch(err => console.error(err));
+
+}
+
+async function gotTheCurrentLocation(position)
+{
+	console.log(position.coords);
+	//Passing the latitude and longitude
+	getTheNameOftheUsingLattitudeAndLangitude(position.coords.latitude, position.coords.longitude);
+
+}
+
+
+//Get Users current location
+async function getTheLocation()
+{
+	navigator.geolocation.getCurrentPosition(gotTheCurrentLocation,()=>{
+
+		alert('😒Location Access denied showing the wether result for Delhi ');
+		getWeather("Delhi");
+
+	});
+}
+
+getTheLocation();
+
+
+
+
+
+
 
 
 
