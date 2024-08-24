@@ -39,7 +39,7 @@ searchInput = document.getElementById("city");
 const apiKey = {
 	method: 'GET',
 	headers: {
-		'api-key': 'bdc_7918d4c959ae4428a91390d65ba90ddb'
+		'api-key': 'd7c5f26be8msh57212e9d37bdbdbp16034bjsneacaac1c0b25'
 	}
 };
 
