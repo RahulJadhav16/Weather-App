@@ -174,7 +174,10 @@ fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+city, opti
 	
 	
 	})
-	.catch(err => console.error(err));
+	.catch(err => {
+		console.error(err)
+		warningApiDown.style.display='block';
+	});
 
 
 	
